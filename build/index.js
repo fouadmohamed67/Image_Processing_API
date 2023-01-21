@@ -9,6 +9,6 @@ const apiMiddleware_1 = __importDefault(require("./middleware/apiMiddleware"));
 const app = (0, express_1.default)();
 app.use('/api', apiMiddleware_1.default, converter_1.default);
 app.listen(5000, () => {
-    console.log("hello");
+    console.log('working on port 5000');
 });
 exports.default = app;

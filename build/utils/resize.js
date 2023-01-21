@@ -17,11 +17,17 @@ const path_1 = __importDefault(require("path"));
 const resize_image = (filename, width, height) => __awaiter(void 0, void 0, void 0, function* () {
     let newWidth = +width;
     let newheight = +height;
-    let pathimage = path_1.default.resolve("src/images/full/" + filename + ".png");
+    let pathimage = path_1.default.resolve('src/images/full/' + filename + '.png');
     try {
         yield (0, sharp_1.default)(pathimage)
             .resize(newWidth, newheight)
-            .toFile("src/images/thumb/" + filename + "_" + newheight + "_" + newWidth + '.png');
+            .toFile('src/images/thumb/' +
+            filename +
+            '_' +
+            newheight +
+            '_' +
+            newWidth +
+            '.png');
         return true;
     }
     catch (error) {

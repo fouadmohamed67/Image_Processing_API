@@ -18,26 +18,26 @@ const resize_1 = __importDefault(require("../../utils/resize"));
 var path = require('path');
 const Router = express_1.default.Router();
 Router.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    let width = req.query.width + "";
-    let height = req.query.height + "";
-    let filename = req.query.filename + "";
-    const result = yield validate_1.default.checImageExist(filename, "full");
+    let width = req.query.width + '';
+    let height = req.query.height + '';
+    let filename = req.query.filename + '';
+    const result = yield validate_1.default.checImageExist(filename, 'full');
     const result_width = yield validate_1.default.checkISPositiveNumber(width);
     const result_height = yield validate_1.default.checkISPositiveNumber(height);
     if (result && result_height && result_width) {
-        const resCahedImage = yield validate_1.default.checImageExist(filename + "_" + height + "_" + width, "thumb");
+        const resCahedImage = yield validate_1.default.checImageExist(filename + '_' + height + '_' + width, 'thumb');
         if (resCahedImage) {
-            console.log("exist before ");
-            res.sendFile(path.resolve('src/images/thumb/' + filename + "_" + height + "_" + width + '.png'));
+            console.log('exist before ');
+            res.sendFile(path.resolve('src/images/thumb/' + filename + '_' + height + '_' + width + '.png'));
         }
         else {
-            console.log("resize image and then store at thumb");
+            console.log('resize image and then store at thumb');
             yield (0, resize_1.default)(filename, width, height);
-            res.sendFile(path.resolve('src/images/thumb/' + filename + "_" + height + "_" + width + '.png'));
+            res.sendFile(path.resolve('src/images/thumb/' + filename + '_' + height + '_' + width + '.png'));
         }
     }
     else {
-        res.send({ "message": " invalid parametrs in Url" });
+        res.send({ message: ' invalid parametrs in Url' });
     }
 }));
 exports.default = Router;

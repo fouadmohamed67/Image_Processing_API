@@ -14,7 +14,7 @@ const middleWareImage = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
     let height = req.query.height;
     let filename = req.query.filename;
     if (!width || !height || !filename) {
-        console.log("error in params");
+        console.log('error in params');
         return false;
     }
     next();

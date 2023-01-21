@@ -15,8 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = __importDefault(require("../index"));
 const supertest_1 = __importDefault(require("supertest"));
 const request = (0, supertest_1.default)(index_1.default);
-describe("test api", () => {
-    it("check api images working in the right way", () => __awaiter(void 0, void 0, void 0, function* () {
+describe('test api', () => {
+    it('check api images working in the right way and response status=200', () => __awaiter(void 0, void 0, void 0, function* () {
         const res = yield request.get('/api/images?filename=downloa&height=200&width=200');
         expect(res.status).toBe(200);
     }));

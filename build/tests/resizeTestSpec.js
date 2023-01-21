@@ -13,8 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const resize_1 = __importDefault(require("../utils/resize"));
-describe("test resize function", () => {
-    it("check if resizing image working in the right way", () => __awaiter(void 0, void 0, void 0, function* () {
-        expect(yield (0, resize_1.default)("download", "500", "500")).toBeTrue();
+describe('test resize function', () => {
+    it('check if resizing image working in the right way', () => __awaiter(void 0, void 0, void 0, function* () {
+        expect(yield (0, resize_1.default)('download', '500', '500')).toBeTrue();
     }));
 });

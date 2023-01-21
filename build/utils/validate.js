@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const checImageExist = (imageName, folderName) => __awaiter(void 0, void 0, void 0, function* () {
-    const image_path = path_1.default.resolve("src/images/" + folderName + "/" + imageName + ".png");
+    const image_path = path_1.default.resolve('src/images/' + folderName + '/' + imageName + '.png');
     if (fs_1.default.existsSync(image_path)) {
         return true;
     }
