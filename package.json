@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tsc ",
     "jasmine": "jasmine",
-    "start": "npm run build && nodemon src/index",
+    "start": "npm run build && nodemon src/index.ts",
     "test": "npm run build && npm run jasmine"
   },
   "author": "",
