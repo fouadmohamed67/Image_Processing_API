@@ -10,11 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const middleWareImage = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    let width = req.query.width;
-    let height = req.query.height;
-    let filename = req.query.filename;
+    const width = req.query.width;
+    const height = req.query.height;
+    const filename = req.query.filename;
     if (!width || !height || !filename) {
         console.log('error in params');
+        res.send({ "message": "there are parameters not found" });
         return false;
     }
     next();

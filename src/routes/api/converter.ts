@@ -2,14 +2,13 @@ import express from 'express';
 import validate from '../../utils/validate';
 import resize_image from '../../utils/resize';
 import { Request, Response } from 'express';
-import fs from 'fs';
-var path = require('path');
+import path from 'path';
 const Router = express.Router();
 
 Router.get('/images', async (req: Request, res: Response) => {
-  let width = req.query.width + '';
-  let height = req.query.height + '';
-  let filename = req.query.filename + '';
+  const width = req.query.width + '';
+  const height = req.query.height + '';
+  const filename = req.query.filename + '';
   const result = await validate.checImageExist(filename, 'full');
   const result_width = await validate.checkISPositiveNumber(width);
   const result_height = await validate.checkISPositiveNumber(height);

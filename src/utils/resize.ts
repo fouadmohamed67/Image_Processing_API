@@ -1,13 +1,13 @@
 import Sharp from 'sharp';
 import path from 'path';
 const resize_image = async (
-  filename: String,
-  width: String,
-  height: String
+  filename: string,
+  width: string,
+  height: string
 ): Promise<boolean> => {
-  let newWidth: number = +width;
-  let newheight: number = +height;
-  let pathimage = path.resolve('src/images/full/' + filename + '.png');
+  const newWidth: number = +width;
+  const newheight: number = +height;
+  const pathimage = path.resolve('src/images/full/' + filename + '.png');
   try {
     await Sharp(pathimage)
       .resize(newWidth, newheight)

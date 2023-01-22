@@ -15,9 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const sharp_1 = __importDefault(require("sharp"));
 const path_1 = __importDefault(require("path"));
 const resize_image = (filename, width, height) => __awaiter(void 0, void 0, void 0, function* () {
-    let newWidth = +width;
-    let newheight = +height;
-    let pathimage = path_1.default.resolve('src/images/full/' + filename + '.png');
+    const newWidth = +width;
+    const newheight = +height;
+    const pathimage = path_1.default.resolve('src/images/full/' + filename + '.png');
     try {
         yield (0, sharp_1.default)(pathimage)
             .resize(newWidth, newheight)

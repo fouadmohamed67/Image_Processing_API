@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 const checImageExist = async (
-  imageName: String,
-  folderName: String
+  imageName: string,
+  folderName: string
 ): Promise<boolean> => {
   const image_path = path.resolve(
     'src/images/' + folderName + '/' + imageName + '.png'
@@ -14,7 +14,7 @@ const checImageExist = async (
   }
 };
 
-const checkISPositiveNumber = (dimantion: String): boolean => {
+const checkISPositiveNumber = (dimantion: string): boolean => {
   const num: number = +dimantion;
   if (num > 0) {
     return true;
